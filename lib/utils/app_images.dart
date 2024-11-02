@@ -14,6 +14,14 @@ class Assets {
   /// assets/images/balance_icon.svg
   static const String imagesBalanceIcon = "assets/images/balance_icon.svg";
 
+  /// Assets for imagesCardBg
+  /// assets/images/card_bg.png
+  static const String imagesCardBg = "assets/images/card_bg.png";
+
+  /// Assets for imagesCardIcon
+  /// assets/images/card_icon.svg
+  static const String imagesCardIcon = "assets/images/card_icon.svg";
+
   /// Assets for imagesCardMask
   /// assets/images/card_mask.svg
   static const String imagesCardMask = "assets/images/card_mask.svg";
