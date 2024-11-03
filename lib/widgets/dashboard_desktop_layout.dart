@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:responsive_admin_dash_board/widgets/income_section.dart';
 import 'package:responsive_admin_dash_board/widgets/my_card_section.dart';
 
+import 'all_expensense_and_quick_invoice.dart';
 import 'all_expenses.dart';
 import 'custom_drawer.dart';
 import 'my_card.dart';
@@ -21,40 +22,46 @@ class DashboardDesktopLayout extends StatelessWidget {
           width: 32,
         ),
         Expanded(
-          flex: 2,
-          child: Column(
-            children: [
-              SizedBox(
-                height: 40,
-              ),
-              AllExpenses(),
-              SizedBox(
-                height: 24,
-              ),
-              QuickInvoice(),
+          flex: 3,
+          child: CustomScrollView(
+            slivers: [
+              SliverFillRemaining(
+                hasScrollBody: false,
+                child: Row(
+                  children: [
+                    Expanded(
+                      flex: 2,
+                      child: Padding(
+                        padding: EdgeInsets.only(top: 40.0),
+                        child: AllExpensensAndQuickInvoice(),
+                      ),
+                    ),
+                    SizedBox(
+                      width: 24,
+                    ),
+                    Expanded(
+                      child: Padding(
+                        padding: EdgeInsets.only(right: 32),
+                        child: Column(
+                          children: [
+                            SizedBox(
+                              height: 40,
+                            ),
+                            MyCardAndTransactionHistorySection(),
+                            SizedBox(
+                              height: 24,
+                            ),
+                            Expanded(child: IncomeSection())
+                          ],
+                        ),
+                      ),
+                    )
+                  ],
+                ),
+              )
             ],
           ),
         ),
-        SizedBox(
-          width: 24,
-        ),
-        Expanded(
-          child: Padding(
-            padding: EdgeInsets.only(right: 32),
-            child: Column(
-              children: [
-                SizedBox(
-                  height: 40,
-                ),
-                MyCardAndTransactionHistorySection(),
-                SizedBox(
-                  height: 24,
-                ),
-                Expanded(child: IncomeSection())
-              ],
-            ),
-          ),
-        )
       ],
     );
   }
